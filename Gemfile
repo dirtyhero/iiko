@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 
 # DB関連
-gem 'mysql2'              # mysql用ドライバ
+gem 'mysql2', '0.3.20'
 gem 'cequel'
 
 # Use SCSS for stylesheets
@@ -42,7 +42,7 @@ group :development, :test do
   gem 'pry-rails'    # rails cの対話式コンソールがirbの代わりにリッチなpryになる
   gem 'pry-doc'      # pry中に show-source [method名] でソース内を読める
   gem 'pry-byebug'   # binding.pryをソースに記載すると、ブレイクポイントとなりデバッグが可能になる
-  gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる  gem 'rubocop', 
+  gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる  gem 'rubocop',
 end
 
 group :development do
@@ -52,4 +52,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
