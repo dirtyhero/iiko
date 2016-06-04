@@ -11,8 +11,16 @@
   </thead>
 
   <tbody>
-    <%= image_tag @image.url %>
-    <br>引用: <%= @image.url %>
+    <tr>
+      <td class="main-content"><%= image_tag @image.url %><br></td>
+    </tr>
+    <tr>
+      <td class="main-content">引用: <%= @image.url %><br></td>
+    </tr>
+    <tr>
+      <td><a class="btn" href="">Kawaiine</a></td>
+      <td><a class="btn2" href="">Next</a></td>
+    </tr>
   </tbody>
 </table>
 
