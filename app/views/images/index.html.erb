@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= image_tag @image.url %>
+    <br>引用: <%= @image.url %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image', new_image_path %>
