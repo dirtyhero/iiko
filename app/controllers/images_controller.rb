@@ -13,6 +13,11 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
 
+  def kawaiine
+    # todo likes に put
+    redirect_to :action => "index"
+  end
+
   # POST /images
   # POST /images.json
   def create
