@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 
 # DB関連
-gem 'mysql2'              # mysql用ドライバ
+gem 'mysql2', '0.3.20'
 gem 'cequel'
 
 # Use SCSS for stylesheets
@@ -25,6 +25,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem "nokogiri"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,7 +43,7 @@ group :development, :test do
   gem 'pry-rails'    # rails cの対話式コンソールがirbの代わりにリッチなpryになる
   gem 'pry-doc'      # pry中に show-source [method名] でソース内を読める
   gem 'pry-byebug'   # binding.pryをソースに記載すると、ブレイクポイントとなりデバッグが可能になる
-  gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる  gem 'rubocop', 
+  gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる  gem 'rubocop',
 end
 
 group :development do
@@ -53,3 +54,12 @@ group :development do
   gem 'spring'
 end
 
+# テスト関連
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+end
