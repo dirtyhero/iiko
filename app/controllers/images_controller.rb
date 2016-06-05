@@ -5,17 +5,19 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     # todo 最適化された順番で取得
-    @image = Image.find(rand(1..1800))
+    unless params[:image_id].present?
+      @image = Image.find(rand(1..1800))
+    else
+      @image = Image.find(params[:image_id])
+    end
+
+    @like = Like.find_by user_id: current_user.id, image_id: @image.id
+    @like = Like.new unless @like.present?
   end
 
   # GET /images/new
   def new
     @image = Image.new
-  end
-
-  def kawaiine
-    # todo likes に put
-    redirect_to :action => "index"
   end
 
   # POST /images
@@ -34,7 +36,7 @@ class ImagesController < ApplicationController
     end
   end
 
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image

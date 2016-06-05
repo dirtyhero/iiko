@@ -9,6 +9,8 @@ class RecommendService
       array_1 = likes_hash[likes_hash.keys.first]
       array_2 = likes_hash[likes_hash.keys.second]
 
+      return 0 if array_1.empty? || array_2.empty?
+
       denominator = (Math.sqrt(array_1.size) * Math.sqrt(array_2.size))
 
       ((array_1 & array_2).size / denominator).round 3
