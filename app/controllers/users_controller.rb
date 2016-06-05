@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       ### TODO
+      flash[:success] = "アカウント作成は完了しました。"
+      redirect_to login_path
     else
       render "new"
     end
