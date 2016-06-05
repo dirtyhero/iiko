@@ -1,7 +1,4 @@
-class Like
-  include Cequel::Record
-
-  key :image_id, :text
-  column :user_ids, :text
+class Like < ActiveRecord::Base
+  belongs_to :image
+  belongs_to :user
 end
-

@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605023046) do
+ActiveRecord::Schema.define(version: 20160605053743) do
+
+  create_table "image_similarity_points", force: :cascade do |t|
+    t.integer  "image_id_1", limit: 4
+    t.integer  "image_id_2", limit: 4
+    t.float    "point",      limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "url",        limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "image_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "likes", ["image_id"], name: "index_likes_on_image_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -28,4 +46,6 @@ ActiveRecord::Schema.define(version: 20160605023046) do
     t.string   "remember_digest", limit: 255
   end
 
+  add_foreign_key "likes", "images"
+  add_foreign_key "likes", "users"
 end
