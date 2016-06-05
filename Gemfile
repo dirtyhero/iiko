@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 # DB関連
 gem 'mysql2', '0.3.20'
 gem 'cequel'
+gem "bcrypt"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
