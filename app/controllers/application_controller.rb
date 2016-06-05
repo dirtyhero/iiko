@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   private
   def pre_process
-    return if logged_in?
-    redirect_to login_path
+    return if params[:controller] == "sessions"
+    redirect_to login_path unless logged_in?
   end
 end
