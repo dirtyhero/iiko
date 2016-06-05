@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605053023) do
+ActiveRecord::Schema.define(version: 20160605053743) do
+
+  create_table "image_similarity_points", force: :cascade do |t|
+    t.integer  "image_id_1", limit: 4
+    t.integer  "image_id_2", limit: 4
+    t.float    "point",      limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "url",        limit: 255
