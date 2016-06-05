@@ -5,7 +5,7 @@ development:
   database: iiko_development
   pool:     5
   username: root
-  password:
+  password: Minhthu92@temona
   reconnect: false
 
 test:
@@ -15,7 +15,7 @@ test:
   database: iiko_test
   pool:     5
   username: root
-  password:
+  password: Minhthu92@temona
   reconnect: false
 
 production:
@@ -27,4 +27,3 @@ production:
   username: root
   password:
   reconnect: false
-
